@@ -5,7 +5,12 @@ public class LevelManager : MonoBehaviour {
     public float autoLoadNextLevelAfter;
 
     private void Start() {
-        Invoke("LoadNextLevel", autoLoadNextLevelAfter);
+        if (autoLoadNextLevelAfter == 0) {
+            // Do nothing
+        } else {
+            Invoke("LoadNextLevel", autoLoadNextLevelAfter);
+        }
+
     }
 
     // Load the game level
